@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #259377; /* Light background for contrast */
+}
+
+header {
+    background-color: #811818; /* Darker shade for header */
+    padding: 15px;
+    text-decoration: underline;
+    text-align: center;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); Shadow effect for depth */
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: -10px;
+    color: #1a1919; /* White text for better contrast */
+}
+
+/* Animation for images */
+.animation {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    border: 5px solid #811818; /* Match border with header */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px auto; /* Center horizontally with margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.animation img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 2s, filter 0.5s; /* Added filter transition */
+}
+
+.animation:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.1); /* Slightly brighten on hover */
+}
+
+/* Section Styles */
+.section {
+    padding: 50px 20px;
+    text-align: left;
+}
+
+/* Council Members */
+.council-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items */
+    gap: 40px; /* Space between images */
+    padding: 20px;
+}
+
+/* Individual Council Member Styling */
+.council-member {
+    text-align: center; /* Center align text */
+}
+
+/* Image Styles */
+.council-container img {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 150px; /* Set a fixed width */
+    height: 200px; /* Maintain aspect ratio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.council-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* Gallery */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: calc(33% - 20px);
+    border: 2px black solid;
+    border-radius: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .council-container {
+        gap: 30px; /* Adjust gap for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Gallery Images */
+    .gallery-container img {
+        width: calc(50% - 20px); /* Two images per row */
+    }
+    
+    /* Council Container */
+    .council-container {
+        gap: 20px; /* Reduce space on smaller screens */
+        justify-content: center; /* Center members */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Gallery Images */
+    .gallery-container img {
+        width: 100%; /* One image per row */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation links */
+    }
+
+    header nav ul li {
+        margin: 10px 0; /* Space between nav items */
+    }
+
+    /* Council Container */
+    .council-container {
+        flex-direction: column; /* Stack members vertically on smaller screens */
+        align-items: center; /* Center align items */
+    }
+
+    /* Council Member Image */
+    .council-container img {
+        width: 100px; /* Smaller width for small screens */
+        height: 130px; /* Adjust height accordingly */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Smaller header for mobile */
+    }
+}
